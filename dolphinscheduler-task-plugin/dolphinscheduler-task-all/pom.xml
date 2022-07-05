@@ -15,7 +15,9 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>dolphinscheduler-task-plugin</artifactId>
         <groupId>org.apache.dolphinscheduler</groupId>
@@ -140,9 +142,45 @@
             <version>${project.version}</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dolphinscheduler</groupId>-->
+<!--            <artifactId>dolphinscheduler-task-jupyter</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.apache.dolphinscheduler</groupId>
             <artifactId>dolphinscheduler-task-blocking</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dolphinscheduler</groupId>-->
+<!--            <artifactId>dolphinscheduler-task-k8s</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dolphinscheduler</groupId>-->
+<!--            <artifactId>dolphinscheduler-task-mlflow</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dolphinscheduler</groupId>-->
+<!--            <artifactId>dolphinscheduler-task-openmldb</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.dolphinscheduler</groupId>-->
+<!--            <artifactId>dolphinscheduler-task-dvc</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.dolphinscheduler</groupId>
+            <artifactId>dolphinscheduler-task-dinky</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

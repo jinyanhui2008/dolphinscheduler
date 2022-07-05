@@ -42,10 +42,10 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/dolphinscheduler
-    username: root
-    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.3.15:3306/dolphin?useSSL=false&useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: bigdata
+    password: "Huansi!@#456"
     hikari:
       connection-test-query: select 1
       minimum-idle: 5
@@ -101,7 +101,7 @@ registry:
   type: zookeeper
   zookeeper:
     namespace: dolphinscheduler
-    connect-string: localhost:2181
+    connect-string: 192.168.3.31:2181
     retry-policy:
       base-sleep-time: 60ms
       max-sleep: 300ms
