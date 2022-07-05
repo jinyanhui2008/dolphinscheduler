@@ -314,9 +314,73 @@ export function formatParams(data: INodeData): {
   }
 
   if (data.taskType === 'ZEPPELIN') {
-    taskParams.noteId = data.noteId
-    taskParams.paragraphId = data.paragraphId
+    taskParams.noteId = data.zeppelinNoteId
+    taskParams.paragraphId = data.zeppelinParagraphId
+    // taskParams.parameters = data.parameters
   }
+
+  // if (data.taskType === 'K8S') {
+  //   taskParams.namespace = data.namespace
+  //   taskParams.minCpuCores = data.minCpuCores
+  //   taskParams.minMemorySpace = data.minMemorySpace
+  //   taskParams.image = data.image
+  // }
+
+  // if (data.taskType === 'JUPYTER') {
+  //   taskParams.condaEnvName = data.condaEnvName
+  //   taskParams.inputNotePath = data.inputNotePath
+  //   taskParams.outputNotePath = data.outputNotePath
+  //   taskParams.parameters = data.parameters
+  //   taskParams.kernel = data.kernel
+  //   taskParams.engine = data.engine
+  //   taskParams.executionTimeout = data.executionTimeout
+  //   taskParams.startTimeout = data.startTimeout
+  //   taskParams.others = data.others
+  // }
+
+  // if (data.taskType === 'MLFLOW') {
+  //   taskParams.algorithm = data.algorithm
+  //   taskParams.params = data.params
+  //   taskParams.searchParams = data.searchParams
+  //   taskParams.dataPath = data.dataPath
+  //   taskParams.experimentName = data.experimentName
+  //   taskParams.modelName = data.modelName
+  //   taskParams.mlflowTrackingUri = data.mlflowTrackingUri
+  //   taskParams.mlflowJobType = data.mlflowJobType
+  //   taskParams.automlTool = data.automlTool
+  //   taskParams.registerModel = data.registerModel
+  //   taskParams.mlflowTaskType = data.mlflowTaskType
+  //   taskParams.deployType = data.deployType
+  //   taskParams.deployPort = data.deployPort
+  //   taskParams.deployModelKey = data.deployModelKey
+  //   taskParams.mlflowProjectRepository = data.mlflowProjectRepository
+  //   taskParams.mlflowProjectVersion = data.mlflowProjectVersion
+  //   taskParams.cpuLimit = data.cpuLimit
+  //   taskParams.memoryLimit = data.memoryLimit
+  // }
+  //
+  // if (data.taskType === 'DVC') {
+  //   taskParams.dvcTaskType = data.dvcTaskType
+  //   taskParams.dvcRepository = data.dvcRepository
+  //   taskParams.dvcVersion = data.dvcVersion
+  //   taskParams.dvcDataLocation = data.dvcDataLocation
+  //   taskParams.dvcMessage = data.dvcMessage
+  //   taskParams.dvcLoadSaveDataPath = data.dvcLoadSaveDataPath
+  //   taskParams.dvcStoreUrl = data.dvcStoreUrl
+  // }
+
+  if (data.taskType === 'DINKY') {
+    taskParams.address = data.address
+    taskParams.taskId = data.taskId
+    taskParams.online = data.online
+  }
+
+  // if (data.taskType === 'OPENMLDB') {
+  //   taskParams.zk = data.zk
+  //   taskParams.zkPath = data.zkPath
+  //   taskParams.executeMode = data.executeMode
+  //   taskParams.sql = data.sql
+  // }
 
   if (data.taskType === 'PIGEON') {
     taskParams.targetJobName = data.targetJobName
@@ -363,7 +427,9 @@ export function formatParams(data: INodeData): {
       timeout: data.timeoutFlag ? data.timeout : 0,
       timeoutFlag: data.timeoutFlag ? 'OPEN' : 'CLOSE',
       timeoutNotifyStrategy: data.timeoutFlag ? timeoutNotifyStrategy : '',
-      workerGroup: data.workerGroup
+      workerGroup: data.workerGroup,
+      cpuQuota: data.cpuQuota || -1,
+      memoryMax: data.memoryMax || -1
     }
   } as {
     processDefinitionCode: string
