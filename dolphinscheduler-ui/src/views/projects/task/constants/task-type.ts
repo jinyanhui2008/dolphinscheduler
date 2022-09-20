@@ -105,26 +105,26 @@ export const TASK_TYPES_MAP = {
     alias: 'ZEPPELIN',
     helperLinkDisable: true
   },
-  JUPYTER: {
-    alias: 'JUPYTER',
-    helperLinkDisable: true
-  },
-  K8S: {
-    alias: 'K8S',
-    helperLinkDisable: true
-  },
-  MLFLOW: {
-    alias: 'MLFLOW',
-    helperLinkDisable: true
-  },
-  OPENMLDB: {
-    alias: 'OPENMLDB',
-    helperLinkDisable: true
-  },
-  DVC: {
-    alias: 'DVC',
-    helperLinkDisable: true
-  },
+  // JUPYTER: {
+  //   alias: 'JUPYTER',
+  //   helperLinkDisable: true
+  // },
+  // K8S: {
+  //   alias: 'K8S',
+  //   helperLinkDisable: true
+  // },
+  // MLFLOW: {
+  //   alias: 'MLFLOW',
+  //   helperLinkDisable: true
+  // },
+  // OPENMLDB: {
+  //   alias: 'OPENMLDB',
+  //   helperLinkDisable: true
+  // },
+  // DVC: {
+  //   alias: 'DVC',
+  //   helperLinkDisable: true
+  // },
   DINKY: {
     alias: 'DINKY',
     helperLinkDisable: true
