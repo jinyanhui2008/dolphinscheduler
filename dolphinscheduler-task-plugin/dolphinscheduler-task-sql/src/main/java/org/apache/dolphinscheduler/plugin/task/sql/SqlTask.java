@@ -292,6 +292,7 @@ public class SqlTask extends AbstractTaskExecutor {
 
     private String executeQuery(Connection connection, SqlBinds sqlBinds, String handlerType) throws Exception {
         try (PreparedStatement statement = prepareStatementAndBind(connection, sqlBinds)) {
+            logger.info("{} statement execute query, for sql: {}", handlerType, sqlBinds.getSql());
             ResultSet resultSet = statement.executeQuery();
             return resultProcess(resultSet);
         }
@@ -363,7 +364,7 @@ public class SqlTask extends AbstractTaskExecutor {
                     ParameterUtils.setInParameter(entry.getKey(), stmt, prop.getType(), prop.getValue());
                 }
             }
-            logger.info("prepare statement replace sql : {}, sql parameters : {}", sqlBinds.getSql(), sqlBinds.getParamsMap());
+            logger.info("prepare statement replace sql : {} ", stmt);
             return stmt;
         } catch (Exception exception) {
             throw new TaskException("SQL task prepareStatementAndBind error", exception);
